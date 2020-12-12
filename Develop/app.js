@@ -60,6 +60,24 @@ let questions = [
 
 ]
 // var for each level with question object for final question
+let manager = {
+        type:"imput",
+        name: "office",
+        message: "What is their office number?",
+};
+
+let engineer = {
+    type:"imput",
+    name: "GitHub",
+    message: "What is their GitHub?",
+};
+
+let intern = {
+    type:"imput",
+    name: "School",
+    message: "Where do/did they go to School?",
+};
+
 
 function start(){
 

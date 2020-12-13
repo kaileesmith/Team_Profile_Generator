@@ -102,12 +102,15 @@ inquirer.prompt([
         switch(employee_title){
             case "Manager":
                 employee = new Manager (employee_name, id, employee_email, employee_titleInput);
-
+                break;
             case "Engineer":
                     employee = new Engineer (employee_name, id, employee_email, employee_titleInput);
-
+                    break;
             case "Intern":
                 employee = new Intern (employee_name, id, employee_email, employee_titleInput );
+                break;
+                default:
+                break;
         }
         employees.push(employee)
         console.log(employees);

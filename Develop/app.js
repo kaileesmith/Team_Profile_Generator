@@ -72,9 +72,14 @@ function addEmployee (){
         employee_name = data.name;
         employee_title = data.position;
         employee_email = data.email;
-
-
         
+    } else if(data.position === "Engineer"){
+        titleQuestion = "What is their GitHub?";
+        employee_name = data.name;
+        employee_title = data.position;
+        employee_email = data.email;
+
+
     )
 
 

@@ -72,14 +72,21 @@ function addEmployee (){
         employee_name = data.name;
         employee_title = data.position;
         employee_email = data.email;
-        
+
     } else if(data.position === "Engineer"){
         titleQuestion = "What is their GitHub?";
         employee_name = data.name;
         employee_title = data.position;
         employee_email = data.email;
 
+    }else if(data.position === "Intern"){
+        titleQuestion = "Where do/did they go to School?";
+        employee_name = data.name;
+        employee_title = data.position;
+        employee_email = data.email;
+    };
 
+    
     )
 
 
@@ -105,24 +112,6 @@ function addEmployee (){
 //     },
 
 // ]
-// var for each level with question object for final question
-// let manager = {
-//         type:"imput",
-//         name: "office",
-//         message: "What is their office number?",
-// };
-
-// let engineer = {
-//     type:"imput",
-//     name: "GitHub",
-//     message: "What is their GitHub?",
-// };
-
-// let intern = {
-//     type:"imput",
-//     name: "School",
-//     message: "Where do/did they go to School?",
-// };
 
 
 // inquirer.prompt(intro).then(data => {
@@ -143,4 +132,4 @@ function addEmployee (){
 // })
 // };
 
-// start();
+addEmployee();

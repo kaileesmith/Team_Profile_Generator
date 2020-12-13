@@ -34,16 +34,9 @@ const render = require("./lib/htmlRenderer");
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
 
-let employee = []
+let employees = [];
+let id= 0;
 
-let intro = [
-    {
-        type:"list",
-        name: "intro",
-        message:" Do you want to add someone to your team?",
-        choices: ["yes", "no"]
-    },
-]
 let questions = [
     {
         type:"input",
@@ -84,7 +77,11 @@ function start(){
 inquirer.prompt(intro).then(data => {
     if (data.intro === "yes"){
         inquirer.prompt(questions).then(data => {
-            // if data .output the inquirer.prompt the question related
+            // PICK UP HERE TO CONTINUE QUESTIONS- LOOK AT EXAMPLE
+            // if data .output then inquirer.prompt the question related
+            if(data.position === "Manager"){
+                inquirer.prompt(manager).then(employee.push(data))
+            }else
             // push each employee to array
             start();
         })

@@ -59,6 +59,28 @@ function addEmployee (){
 
     ])
 
+    .then((data) =>{
+        
+        let titleQuestion = "";
+        let employee_name = "";
+        let employee_title = "";
+        let employee_titleInput = "";
+        let employee_email = "";
+
+    if(data.position === "Manager"){
+        titleQuestion = "What is their office number?";
+        employee_name = data.name;
+        employee_title = data.position;
+        employee_email = data.email;
+
+
+        
+    )
+
+
+    })
+
+
 
 
 }
@@ -79,44 +101,41 @@ function addEmployee (){
 
 // ]
 // var for each level with question object for final question
-let manager = {
-        type:"imput",
-        name: "office",
-        message: "What is their office number?",
-};
+// let manager = {
+//         type:"imput",
+//         name: "office",
+//         message: "What is their office number?",
+// };
 
-let engineer = {
-    type:"imput",
-    name: "GitHub",
-    message: "What is their GitHub?",
-};
+// let engineer = {
+//     type:"imput",
+//     name: "GitHub",
+//     message: "What is their GitHub?",
+// };
 
-let intern = {
-    type:"imput",
-    name: "School",
-    message: "Where do/did they go to School?",
-};
+// let intern = {
+//     type:"imput",
+//     name: "School",
+//     message: "Where do/did they go to School?",
+// };
 
 
-function start(){
+// inquirer.prompt(intro).then(data => {
+//     if (data.intro === "yes"){
+//         inquirer.prompt(questions).then(data => {
+//             // if data .output then inquirer.prompt the question related
+//             if(data.position === "Manager"){
+//                 inquirer.prompt(manager).then(employee.push(data))
+//             }else
+//             // push each employee to array
+//             start();
+//         })
+//     }
+//     else{
+//         return
+//         // call arrary and send through 
+//     }
+// })
+// };
 
-inquirer.prompt(intro).then(data => {
-    if (data.intro === "yes"){
-        inquirer.prompt(questions).then(data => {
-            // PICK UP HERE TO CONTINUE QUESTIONS- LOOK AT EXAMPLE
-            // if data .output then inquirer.prompt the question related
-            if(data.position === "Manager"){
-                inquirer.prompt(manager).then(employee.push(data))
-            }else
-            // push each employee to array
-            start();
-        })
-    }
-    else{
-        return
-        // call arrary and send through 
-    }
-})
-};
-
-start();
+// start();

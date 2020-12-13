@@ -116,32 +116,40 @@ inquirer.prompt([
         console.log(employees);
 
     })
+    .then((ask) =>{
+        addEmployee();
 
+        }).then((writeFile) => {
 
-    )
-
-
-    })
-
-
-
-
+            if (writeFile) {
+                
+                if (writeFile.confirmEmployee === false){
+                fs.writeFile(outputPath, "main.html", render(employees), 
+                (err) => err ? console.error(err) : console.log("Written!")
+                    ); 
+                };
+            }
+        })
+    });
 }
 
-// let questions = [
-//     {
-//         type:"input",
-//         name: "name",
-//         message: "What is the employee's name?"
-//     },
-//     {
-//         type:"list",
-//         name: "position",
-//         message: "What is the employee's position?",
-//         choices:["Manager", "Engineer", "Intern"]
+// function addEmployee(){
+//     inquirer.prompt([
+//         {
+//             type:"confirm",
+//             name: "addAnother",
+//             message:" Do you want to add another person to your team?",
+//             default: true
+//         },
+//     ])
 
-//     },
-
-// ]
+//     .then((data3) =>{
+//         if(data3.addAnother === true){
+//             addEmployee();
+//         }else{
+//             return "complete";
+//         }
+//     })
+// }
 
 addEmployee();

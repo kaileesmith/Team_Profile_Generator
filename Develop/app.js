@@ -38,6 +38,9 @@ let employees = [];
 let id= 0;
 
 function addEmployee (){
+
+    id ++;
+
     inquirer.prompt([
         {
             type:"input",
@@ -85,8 +88,33 @@ function addEmployee (){
         employee_title = data.position;
         employee_email = data.email;
     };
+inquirer.prompt([
+    {
+        name: "titleInput",
+        type: "input",
+        message: titleQuestion 
+    }
+])
+    .then((data2) =>{
 
-    
+        employee_titleInput = data2.titleInput;
+
+        switch(employee_title){
+            case "Manager":
+                employee = new Manager (employee_name, id, employee_email, employee_titleInput);
+
+            case "Engineer":
+                    employee = new Engineer (employee_name, id, employee_email, employee_titleInput);
+
+            case "Intern":
+                employee = new Intern (employee_name, id, employee_email, employee_titleInput );
+        }
+        employees.push(employee)
+        console.log(employees);
+
+    })
+
+
     )
 
 
@@ -112,24 +140,5 @@ function addEmployee (){
 //     },
 
 // ]
-
-
-// inquirer.prompt(intro).then(data => {
-//     if (data.intro === "yes"){
-//         inquirer.prompt(questions).then(data => {
-//             // if data .output then inquirer.prompt the question related
-//             if(data.position === "Manager"){
-//                 inquirer.prompt(manager).then(employee.push(data))
-//             }else
-//             // push each employee to array
-//             start();
-//         })
-//     }
-//     else{
-//         return
-//         // call arrary and send through 
-//     }
-// })
-// };
 
 addEmployee();

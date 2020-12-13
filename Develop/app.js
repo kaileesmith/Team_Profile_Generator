@@ -117,13 +117,13 @@ inquirer.prompt([
 
     })
     .then((ask) =>{
-        addEmployee();
+        addAnother();
 
         }).then((writeFile) => {
 
             if (writeFile) {
                 
-                if (writeFile.confirmEmployee === false){
+                if (writeFile.addAnother === "no"){
                 fs.writeFile(outputPath, "main.html", render(employees), 
                 (err) => err ? console.error(err) : console.log("Written!")
                     ); 
@@ -133,23 +133,23 @@ inquirer.prompt([
     });
 }
 
-// function addEmployee(){
-//     inquirer.prompt([
-//         {
-//             type:"confirm",
-//             name: "addAnother",
-//             message:" Do you want to add another person to your team?",
-//             default: true
-//         },
-//     ])
+function addAnother(){
+    inquirer.prompt([
+        {
+            type:"list",
+            name: "addAnother",
+            message:" Do you want to add another person to your team?",
+            choices: ["yes","no"],
+        },
+    ])
 
-//     .then((data3) =>{
-//         if(data3.addAnother === true){
-//             addEmployee();
-//         }else{
-//             return "complete";
-//         }
-//     })
-// }
+    .then((data3) =>{
+        if (data3.addAnother === "yes"){
+            addEmployee();
+        }else{
+            return;
+        }
+    })
+}
 
 addEmployee();

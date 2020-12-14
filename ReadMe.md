@@ -16,6 +16,9 @@ After you have forked this repo, run "npm install" in your terminal. In order to
 ## Usage
 After the modules are installed, the user can choose to add an employee. You will do this by answering a series of prompts about the employee. Once the prompts are complete, a html file will be generated and include all information inputed. 
 
+## Screenshot of terminal with prompts
+
+![Terminal with Questions](./terminal.JPG)
 
 ## Contact
 Feel free to reach out to me through GitHub with any questions you may have.

@@ -18,7 +18,7 @@ After the modules are installed, the user can choose to add an employee. You wil
 
 ## Screenshot of terminal with prompts
 
-![Terminal with Questions](./terminal.JPG)
+![Terminal with Questions](./Develop/terminal.JPG)
 
 ## Contact
 Feel free to reach out to me through GitHub with any questions you may have.
